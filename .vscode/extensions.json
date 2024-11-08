@@ -1,0 +1,8 @@
+{
+	"recommendations": [
+		"biomejs.biome",
+		"dotenv.dotenv-vscode",
+		"tamasfe.even-better-toml",
+		"Vercel.turbo-vsc"
+	]
+}

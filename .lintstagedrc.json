@@ -1,0 +1,3 @@
+{
+  "**/*.{js,json,mjs,ts,tsx,md,mdx,yml}": ["@biomejs/biome check --fix"]
+}
