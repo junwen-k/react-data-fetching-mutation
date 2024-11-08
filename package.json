@@ -1,24 +1,27 @@
 {
-  "name": "react-data-fetching-mutation",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "commitlint": "commitlint --edit",
-    "preinstall": "npx only-allow pnpm",
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "test": "turbo test",
-    "format": "@biomejs/biome format --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky"
-  },
-  "packageManager": "pnpm@9.12.3",
-  "engines": {
-    "node": ">=22.0.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0"
-  }
+	"name": "react-data-fetching-mutation",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"commitlint": "commitlint --edit",
+		"preinstall": "npx only-allow pnpm",
+		"build": "turbo build",
+		"dev": "turbo dev",
+		"lint": "biome lint",
+		"test": "turbo test",
+		"format": "biome format --write \"**/*.{ts,tsx,md}\"",
+		"prepare": "husky"
+	},
+	"packageManager": "pnpm@9.12.3",
+	"engines": {
+		"node": ">=22.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@commitlint/cli": "^19.5.0",
+		"@commitlint/config-conventional": "^19.5.0",
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
+		"turbo": "^2.2.3"
+	}
 }
