@@ -22,12 +22,10 @@ export interface GetPostsInput {
 	perPage?: number;
 }
 
-export const useGetPosts = (input: GetPostsInput) => {
+export const useGetPosts = ({ page = 1, perPage = 5 }: GetPostsInput) => {
 	const [data, setData] = React.useState<List<Post>>();
 	const [isLoading, setIsLoading] = React.useState(false);
 	const [error, setError] = React.useState<Error>();
-
-	const { page = 1, perPage = 5 } = input;
 
 	const fetchPosts = React.useCallback(async () => {
 		setIsLoading(true);
