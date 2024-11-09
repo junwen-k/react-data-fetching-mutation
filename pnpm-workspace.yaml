@@ -2,5 +2,5 @@ packages:
   - "apps/*"
 
 catalog:
-  "@tanstack/eslint-plugin-query": ^5.59.7
   "@tanstack/react-query": ^5.51.24
+  ky: ^1.7.2

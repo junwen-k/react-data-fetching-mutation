@@ -1,42 +1,62 @@
 import * as React from "react";
 
-interface Post {
+export interface Post {
 	id: string;
 	title: string;
 	views: string;
+	createdAt: string;
 }
 
-export const useGetPosts = () => {
-	const [posts, setPosts] = React.useState<Post[]>([]);
+export interface List<T> {
+	first: number;
+	prev: number | null;
+	next: number | null;
+	last: number;
+	pages: number;
+	items: number;
+	data: T[];
+}
+
+export interface GetPostsInput {
+	page?: number;
+	perPage?: number;
+}
+
+export const useGetPosts = (input: GetPostsInput) => {
+	const [data, setData] = React.useState<List<Post>>();
 	const [isLoading, setIsLoading] = React.useState(false);
 	const [error, setError] = React.useState<Error>();
+
+	const { page = 1, perPage = 5 } = input;
 
 	const fetchPosts = React.useCallback(async () => {
 		setIsLoading(true);
 
 		try {
-			const response = await fetch(`${import.meta.env.VITE_API_URL}/posts`);
+			const response = await fetch(
+				`${import.meta.env.VITE_API_URL}/posts?_page=${page}&_per_page=${perPage}&_sort=-createdAt`,
+			);
 
 			if (!response.ok) {
 				throw new Error(`Fetch error: ${response.statusText}`);
 			}
 
-			const posts = (await response.json()) as Post[];
+			const data = (await response.json()) as List<Post>;
 
-			setPosts(posts);
+			setData(data);
 		} catch (error) {
 			setError(error as Error);
 		}
 
 		setIsLoading(false);
-	}, []);
+	}, [page, perPage]);
 
 	React.useEffect(() => {
 		fetchPosts();
 	}, [fetchPosts]);
 
 	return {
-		posts,
+		data,
 		isLoading,
 		error,
 		fetchPosts,
@@ -54,7 +74,7 @@ export const useCreatePost = () => {
 		try {
 			const response = await fetch(`${import.meta.env.VITE_API_URL}/posts`, {
 				method: "POST",
-				body: JSON.stringify({ title }),
+				body: JSON.stringify({ title, createdAt: new Date().toISOString() }),
 				headers: {
 					"content-type": "application/json",
 				},
