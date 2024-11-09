@@ -62,7 +62,7 @@ export const useGetPosts = ({ page = 1, perPage = 5 }: GetPostsInput) => {
 };
 
 export const useCreatePost = () => {
-	const [post, setPost] = React.useState<Post[]>([]);
+	const [post, setPost] = React.useState<Post>();
 	const [isLoading, setIsLoading] = React.useState(false);
 	const [error, setError] = React.useState<Error>();
 
@@ -82,7 +82,7 @@ export const useCreatePost = () => {
 				throw new Error(`Fetch error: ${response.statusText}`);
 			}
 
-			const post = (await response.json()) as Post[];
+			const post = (await response.json()) as Post;
 
 			setPost(post);
 		} catch (error) {
@@ -101,7 +101,7 @@ export const useCreatePost = () => {
 };
 
 export const useDeletePost = () => {
-	const [post, setPost] = React.useState<Post[]>([]);
+	const [post, setPost] = React.useState<Post>();
 	const [isLoading, setIsLoading] = React.useState(false);
 	const [error, setError] = React.useState<Error>();
 
@@ -118,7 +118,7 @@ export const useDeletePost = () => {
 				throw new Error(`Fetch error: ${response.statusText}`);
 			}
 
-			const post = (await response.json()) as Post[];
+			const post = (await response.json()) as Post;
 
 			setPost(post);
 		} catch (error) {
