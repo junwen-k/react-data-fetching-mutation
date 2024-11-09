@@ -1,11 +1,142 @@
 {
 	"posts": [
-		{ "id": "1", "title": "a title", "views": 100 },
-		{ "id": "2", "title": "another title", "views": 200 }
+		{
+			"id": "112a",
+			"title": "10 Tips for Effective Remote Work",
+			"views": 1245
+		},
+		{
+			"id": "28jz",
+			"title": "The Future of Web Development in 2024",
+			"views": 983
+		},
+		{
+			"id": "095a",
+			"title": "How to Improve Your JavaScript Skills in 30 Days",
+			"views": 1156
+		},
+		{
+			"id": "2f18",
+			"title": "Understanding the Basics of React and Redux",
+			"views": 932
+		},
+		{
+			"id": "1b39",
+			"title": "Why AI Will Change the Job Market Forever",
+			"views": 512
+		},
+		{
+			"id": "c62f",
+			"title": "Top 5 Programming Languages to Learn in 2024",
+			"views": 642
+		},
+		{
+			"id": "3aff",
+			"title": "Designing Accessible Web Applications: A Complete Guide",
+			"views": 1047
+		},
+		{
+			"id": "0379",
+			"title": "The Rise of Cryptocurrency and Blockchain Technology",
+			"views": 378
+		},
+		{
+			"id": "df4f",
+			"title": "A Beginner’s Guide to GraphQL and Apollo Client",
+			"views": 2314
+		},
+		{
+			"id": "a971",
+			"title": "Building a Full Stack Application with Node.js and React",
+			"views": 1567
+		},
+		{
+			"id": "6821",
+			"title": "Exploring Web3: What You Need to Know",
+			"views": 864
+		},
+		{
+			"id": "1226",
+			"title": "How to Master CSS Grid and Flexbox",
+			"views": 721
+		},
+		{
+			"id": "89ef",
+			"title": "The Importance of SEO in 2024",
+			"views": 980
+		},
+		{
+			"id": "0555",
+			"title": "Serverless Architectures: Pros and Cons",
+			"views": 433
+		},
+		{
+			"id": "a1c5",
+			"title": "Building a REST API with Express and MongoDB",
+			"views": 1056
+		},
+		{
+			"id": "69a5",
+			"title": "Mastering JavaScript: Tips and Tricks for Developers",
+			"views": 768
+		},
+		{
+			"id": "9d60",
+			"title": "How to Secure Your Web Applications from Attackers",
+			"views": 902
+		},
+		{
+			"id": "b601",
+			"title": "A Look into the Future of Cloud Computing",
+			"views": 1532
+		}
 	],
 	"comments": [
-		{ "id": "1", "text": "a comment about post 1", "postId": "1" },
-		{ "id": "2", "text": "another comment about post 1", "postId": "1" }
+		{
+			"id": "1",
+			"text": "Great article! I've been working remotely for years, and the tips here are super useful.",
+			"postId": "1"
+		},
+		{
+			"id": "2",
+			"text": "I think AI will definitely impact the job market. Excited to see where it goes.",
+			"postId": "1"
+		},
+		{
+			"id": "3",
+			"text": "Web development is changing so fast. Looking forward to the future!",
+			"postId": "2"
+		},
+		{
+			"id": "4",
+			"text": "The whole React and Redux thing still confuses me. Any recommendations for learning resources?",
+			"postId": "2"
+		},
+		{
+			"id": "5",
+			"text": "I’ve been using GraphQL for my latest project. It’s so much better than REST.",
+			"postId": "5"
+		},
+		{
+			"id": "6",
+			"text": "The guide on CSS Grid was so helpful. I never understood it until now.",
+			"postId": "12"
+		},
+		{
+			"id": "7",
+			"text": "Serverless architecture sounds cool, but I'm unsure about the cost effectiveness in the long run.",
+			"postId": "13"
+		},
+		{
+			"id": "8",
+			"text": "Do you recommend React over Vue for building modern web apps?",
+			"postId": "14"
+		},
+		{
+			"id": "9",
+			"text": "I’ve seen a lot of crypto-related posts lately. This one was quite informative.",
+			"postId": "7"
+		}
 	],
 	"profile": {
 		"name": "typicode"

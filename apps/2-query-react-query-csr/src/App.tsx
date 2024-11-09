@@ -25,11 +25,14 @@ function App() {
 	}
 
 	return (
-		<ul>
-			{data?.map((item) => (
-				<li key={item.id}>{item.title}</li>
-			))}
-		</ul>
+		<div>
+			<h1>Query React Query CSR</h1>
+			<ul>
+				{data?.map((item) => (
+					<li key={item.id}>{item.title}</li>
+				))}
+			</ul>
+		</div>
 	);
 }
 

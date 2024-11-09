@@ -7,7 +7,7 @@ interface Post {
 }
 
 function App() {
-	const [items, setItems] = React.useState<Post[]>([]);
+	const [posts, setPosts] = React.useState<Post[]>([]);
 	const [isLoading, setIsLoading] = React.useState(false);
 	const [error, setError] = React.useState<Error>();
 
@@ -22,9 +22,9 @@ function App() {
 					throw new Error(`Fetch error: ${response.statusText}`);
 				}
 
-				const json = (await response.json()) as Post[];
+				const posts = (await response.json()) as Post[];
 
-				setItems(json);
+				setPosts(posts);
 			} catch (error) {
 				setError(error as Error);
 			}
@@ -44,11 +44,14 @@ function App() {
 	}
 
 	return (
-		<ul>
-			{items.map((item) => (
-				<li key={item.id}>{item.title}</li>
-			))}
-		</ul>
+		<div>
+			<h1>Query Basic CSR</h1>
+			<ul>
+				{posts.map((item) => (
+					<li key={item.id}>{item.title}</li>
+				))}
+			</ul>
+		</div>
 	);
 }
 

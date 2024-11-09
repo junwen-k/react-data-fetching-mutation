@@ -1,10 +1,10 @@
 {
-	"name": "basic-csr",
+	"name": "mutation-basic-csr",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
+		"dev": "vite --port 4002",
 		"build": "tsc -b && vite build",
 		"preview": "vite preview"
 	},
