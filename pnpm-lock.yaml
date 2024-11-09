@@ -7,8 +7,14 @@ settings:
 catalogs:
   default:
     '@tanstack/react-query':
-      specifier: ^5.51.24
+      specifier: ^5.59.20
       version: 5.59.20
+    '@tanstack/react-query-devtools':
+      specifier: ^5.59.20
+      version: 5.59.20
+    '@tanstack/react-table':
+      specifier: ^8.20.5
+      version: 8.20.5
     ky:
       specifier: ^1.7.2
       version: 1.7.2
@@ -69,6 +75,9 @@ importers:
       '@tanstack/react-query':
         specifier: 'catalog:'
         version: 5.59.20(react@18.3.1)
+      '@tanstack/react-query-devtools':
+        specifier: 'catalog:'
+        version: 5.59.20(@tanstack/react-query@5.59.20(react@18.3.1))(react@18.3.1)
       ky:
         specifier: 'catalog:'
         version: 1.7.2
@@ -125,6 +134,9 @@ importers:
       '@tanstack/react-query':
         specifier: 'catalog:'
         version: 5.59.20(react@18.3.1)
+      '@tanstack/react-query-devtools':
+        specifier: 'catalog:'
+        version: 5.59.20(@tanstack/react-query@5.59.20(react@18.3.1))(react@18.3.1)
       ky:
         specifier: 'catalog:'
         version: 1.7.2
@@ -154,8 +166,48 @@ importers:
   apps/5-basic-csr:
     dependencies:
       '@tanstack/react-table':
-        specifier: ^8.20.5
+        specifier: 'catalog:'
         version: 8.20.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@types/node':
+        specifier: ^22.9.0
+        version: 22.9.0
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      '@vitejs/plugin-react-swc':
+        specifier: ^3.5.0
+        version: 3.7.1(vite@5.4.10(@types/node@22.9.0))
+      typescript:
+        specifier: ~5.6.2
+        version: 5.6.3
+      vite:
+        specifier: ^5.4.10
+        version: 5.4.10(@types/node@22.9.0)
+
+  apps/6-react-query-csr:
+    dependencies:
+      '@tanstack/react-query':
+        specifier: 'catalog:'
+        version: 5.59.20(react@18.3.1)
+      '@tanstack/react-query-devtools':
+        specifier: 'catalog:'
+        version: 5.59.20(@tanstack/react-query@5.59.20(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-table':
+        specifier: 'catalog:'
+        version: 8.20.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      ky:
+        specifier: 'catalog:'
+        version: 1.7.2
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -699,6 +751,15 @@ packages:
 
   '@tanstack/query-core@5.59.20':
     resolution: {integrity: sha512-e8vw0lf7KwfGe1if4uPFhvZRWULqHjFcz3K8AebtieXvnMOz5FSzlZe3mTLlPuUBcydCnBRqYs2YJ5ys68wwLg==}
+
+  '@tanstack/query-devtools@5.59.20':
+    resolution: {integrity: sha512-vxhuQ+8VV4YWQSFxQLsuM+dnEKRY7VeRzpNabFXdhEwsBYLrjXlF1pM38A8WyKNLqZy8JjyRO8oP4Wd/oKHwuQ==}
+
+  '@tanstack/react-query-devtools@5.59.20':
+    resolution: {integrity: sha512-AL/eQS1NFZhwwzq2Bq9Gd8wTTH+XhPNOJlDFpzPMu9NC5CQVgA0J8lWrte/sXpdWNo5KA4hgHnEdImZsF4h6Lw==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.59.20
+      react: ^18 || ^19
 
   '@tanstack/react-query@5.59.20':
     resolution: {integrity: sha512-Zly0egsK0tFdfSbh5/mapSa+Zfc3Et0Zkar7Wo5sQkFzWyB3p3uZWOHR2wrlAEEV2L953eLuDBtbgFvMYiLvUw==}
@@ -2224,6 +2285,14 @@ snapshots:
       - typescript
 
   '@tanstack/query-core@5.59.20': {}
+
+  '@tanstack/query-devtools@5.59.20': {}
+
+  '@tanstack/react-query-devtools@5.59.20(@tanstack/react-query@5.59.20(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/query-devtools': 5.59.20
+      '@tanstack/react-query': 5.59.20(react@18.3.1)
+      react: 18.3.1
 
   '@tanstack/react-query@5.59.20(react@18.3.1)':
     dependencies:

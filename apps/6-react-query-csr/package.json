@@ -1,21 +1,23 @@
 {
-	"name": "mutation-react-query-csr",
+	"name": "react-query-csr",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite --port 4003",
+		"dev": "vite --port 4005",
 		"build": "tsc -b && vite build",
 		"preview": "vite preview"
 	},
 	"dependencies": {
 		"@tanstack/react-query": "catalog:",
 		"@tanstack/react-query-devtools": "catalog:",
+		"@tanstack/react-table": "catalog:",
 		"ky": "catalog:",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1"
 	},
 	"devDependencies": {
+		"@types/node": "^22.9.0",
 		"@types/react": "^18.3.12",
 		"@types/react-dom": "^18.3.1",
 		"@vitejs/plugin-react-swc": "^3.5.0",
