@@ -4,7 +4,7 @@ import { Posts } from "@/components/posts";
 export default async function Home({
 	searchParams,
 }: {
-	searchParams: { [key: string]: string | undefined };
+	searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
 	const { page = "1", perPage = "5" } = await searchParams;
 
