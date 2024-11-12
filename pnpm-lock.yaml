@@ -234,11 +234,48 @@ importers:
         specifier: ^5.4.10
         version: 5.4.10(@types/node@22.9.0)
 
-  apps/7-query-basic-ssr:
+  apps/7-basic-ssr:
     dependencies:
       '@tanstack/react-table':
         specifier: 'catalog:'
         version: 8.20.5(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
+      next:
+        specifier: 15.0.3
+        version: 15.0.3(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
+      react:
+        specifier: 19.0.0-rc-66855b96-20241106
+        version: 19.0.0-rc-66855b96-20241106
+      react-dom:
+        specifier: 19.0.0-rc-66855b96-20241106
+        version: 19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106)
+    devDependencies:
+      '@types/node':
+        specifier: ^20
+        version: 20.17.6
+      '@types/react':
+        specifier: ^18
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18
+        version: 18.3.1
+      typescript:
+        specifier: ^5
+        version: 5.6.3
+
+  apps/8-react-query-ssr:
+    dependencies:
+      '@tanstack/react-query':
+        specifier: 'catalog:'
+        version: 5.59.20(react@19.0.0-rc-66855b96-20241106)
+      '@tanstack/react-query-devtools':
+        specifier: 'catalog:'
+        version: 5.59.20(@tanstack/react-query@5.59.20(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
+      '@tanstack/react-table':
+        specifier: 'catalog:'
+        version: 8.20.5(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
+      ky:
+        specifier: 'catalog:'
+        version: 1.7.2
       next:
         specifier: 15.0.3
         version: 15.0.3(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
@@ -2686,10 +2723,21 @@ snapshots:
       '@tanstack/react-query': 5.59.20(react@18.3.1)
       react: 18.3.1
 
+  '@tanstack/react-query-devtools@5.59.20(@tanstack/react-query@5.59.20(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)':
+    dependencies:
+      '@tanstack/query-devtools': 5.59.20
+      '@tanstack/react-query': 5.59.20(react@19.0.0-rc-66855b96-20241106)
+      react: 19.0.0-rc-66855b96-20241106
+
   '@tanstack/react-query@5.59.20(react@18.3.1)':
     dependencies:
       '@tanstack/query-core': 5.59.20
       react: 18.3.1
+
+  '@tanstack/react-query@5.59.20(react@19.0.0-rc-66855b96-20241106)':
+    dependencies:
+      '@tanstack/query-core': 5.59.20
+      react: 19.0.0-rc-66855b96-20241106
 
   '@tanstack/react-table@8.20.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
