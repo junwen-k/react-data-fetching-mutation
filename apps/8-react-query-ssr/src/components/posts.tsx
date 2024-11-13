@@ -2,12 +2,12 @@
 
 import * as React from "react";
 
-import type { Post } from "@/apis/posts";
 import {
 	useCreatePostMutation,
 	useDeletePostMutation,
 	useGetPostsSuspenseQuery,
 } from "@/queries/posts";
+import type { Post } from "@/types/post";
 import {
 	type CellContext,
 	type PaginationState,
@@ -58,7 +58,7 @@ export const Posts = () => {
 		perPage,
 	});
 
-	const { mutate: createPost } = useCreatePostMutation();
+	const { mutate: createPost, isPending, error } = useCreatePostMutation();
 
 	const { mutate: deletePost } = useDeletePostMutation();
 
@@ -73,12 +73,12 @@ export const Posts = () => {
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		await createPost(value);
+		createPost(value);
 		setValue("");
 	};
 
 	const handleDeletePost = async (postId: string) => {
-		await deletePost(postId);
+		deletePost(postId);
 	};
 
 	const handlePaginationChange = React.useCallback(
@@ -113,6 +113,8 @@ export const Posts = () => {
 	return (
 		<div>
 			<h1>React Query SSR</h1>
+			<div>{isPending && "Creating Post..."}</div>
+			<span style={{ color: "red" }}>{error?.message}</span>
 			<form onSubmit={handleSubmit}>
 				<input
 					value={value}

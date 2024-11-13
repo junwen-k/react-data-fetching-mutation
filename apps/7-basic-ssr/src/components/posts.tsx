@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { type List, type Post, createPost, deletePost } from "@/apis/posts";
+import { type List, type Post, createPost, deletePost } from "@/actions/posts";
 import {
 	type CellContext,
 	type PaginationState,
@@ -58,6 +58,7 @@ export const Posts = ({ data }: PostsProps) => {
 		[searchParams],
 	);
 
+	// We could've used `useActionState` here. Visit https://github.com/vercel/next.js/tree/canary/examples/next-forms for more examples.
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		await createPost(value);

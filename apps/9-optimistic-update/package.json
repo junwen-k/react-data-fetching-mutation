@@ -1,0 +1,26 @@
+{
+	"name": "9-optimistic-update",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbopack --port 4008",
+		"build": "next build",
+		"start": "next start --port 4008",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@tanstack/react-query": "catalog:",
+		"@tanstack/react-query-devtools": "catalog:",
+		"@tanstack/react-table": "catalog:",
+		"ky": "catalog:",
+		"react": "19.0.0-rc-66855b96-20241106",
+		"react-dom": "19.0.0-rc-66855b96-20241106",
+		"next": "15.0.3"
+	},
+	"devDependencies": {
+		"typescript": "^5",
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18"
+	}
+}

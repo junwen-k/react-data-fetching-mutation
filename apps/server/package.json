@@ -1,7 +1,8 @@
 {
 	"name": "server",
 	"scripts": {
-		"dev": "json-server src/db.json"
+		"dev": "json-server src/db.json",
+		"start": "json-server src/db.json"
 	},
 	"dependencies": {
 		"json-server": "1.0.0-beta.3"

@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite --port 4004",
 		"build": "tsc -b && vite build",
-		"preview": "vite preview"
+		"start": "vite preview --port 4004"
 	},
 	"dependencies": {
 		"@tanstack/react-table": "catalog:",

@@ -5,6 +5,7 @@ import {
 	QueryClient,
 	dehydrate,
 } from "@tanstack/react-query";
+import * as React from "react";
 
 export default async function Home({
 	searchParams,
@@ -22,7 +23,9 @@ export default async function Home({
 
 	return (
 		<HydrationBoundary state={dehydrate(queryClient)}>
-			<Posts />
+			<React.Suspense fallback={<>Loading...</>}>
+				<Posts />
+			</React.Suspense>
 		</HydrationBoundary>
 	);
 }

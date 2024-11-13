@@ -5,10 +5,11 @@
 	"scripts": {
 		"commitlint": "commitlint --edit",
 		"preinstall": "npx only-allow pnpm",
-		"build": "turbo build",
-		"dev": "turbo dev",
+		"build": "turbo --concurrency=11 build",
+		"dev": "turbo --concurrency=11 dev",
+		"start": "turbo --concurrency=11 start",
 		"lint": "biome lint",
-		"test": "turbo test",
+		"test": "turbo --concurrency=11 test",
 		"format": "biome format --write \"**/*.{ts,tsx,md}\"",
 		"prepare": "husky"
 	},

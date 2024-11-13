@@ -1,4 +1,4 @@
-import { getPosts } from "@/apis/posts";
+import { getPosts } from "@/actions/posts";
 import { Posts } from "@/components/posts";
 
 export default async function Home({
