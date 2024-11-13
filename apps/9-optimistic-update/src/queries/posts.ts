@@ -12,10 +12,7 @@ import {
 export const getPostsQueryOptions = (input: GetPostsInput) =>
 	queryOptions({
 		queryKey: ["posts", input],
-		queryFn: async () => {
-			await new Promise((res) => setTimeout(res, 2000));
-			return getPosts(input);
-		},
+		queryFn: () => getPosts(input),
 		placeholderData: {
 			first: 0,
 			prev: null,
