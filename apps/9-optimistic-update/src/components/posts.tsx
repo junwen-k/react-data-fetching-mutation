@@ -2,12 +2,12 @@
 
 import * as React from "react";
 
-import type { Post } from "@/apis/posts";
 import {
 	useCreatePostMutation,
 	useDeletePostMutation,
 	useGetPostsSuspenseQuery,
 } from "@/queries/posts";
+import type { Post } from "@/types/post";
 import {
 	type CellContext,
 	type PaginationState,
