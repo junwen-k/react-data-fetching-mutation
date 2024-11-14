@@ -2,6 +2,7 @@
 	"name": "react-data-fetching-mutation",
 	"private": true,
 	"type": "module",
+	"license": "MIT",
 	"scripts": {
 		"commitlint": "commitlint --edit",
 		"preinstall": "npx only-allow pnpm",
