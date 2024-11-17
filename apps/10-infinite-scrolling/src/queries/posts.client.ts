@@ -1,10 +1,12 @@
-import { type GetPostsInput, getPosts } from "@/apis/posts";
-import { infiniteQueryOptions, useInfiniteQuery } from "@tanstack/react-query";
+import { getPosts } from "@/apis/posts.client";
+import { infiniteQueryOptions } from "@tanstack/react-query";
 
 // Query options for fetching posts
-export const getPostsInfiniteQueryOptions = (input?: GetPostsInput) =>
+export const getPostsInfiniteQueryOptions = (
+	...input: Parameters<typeof getPosts>
+) =>
 	infiniteQueryOptions({
-		queryKey: ["posts", input],
+		queryKey: ["posts", ...input],
 		queryFn: async ({ pageParam }) => {
 			await new Promise((res) => setTimeout(res, 500));
 			return getPosts(pageParam);
@@ -12,7 +14,7 @@ export const getPostsInfiniteQueryOptions = (input?: GetPostsInput) =>
 		initialPageParam: {
 			page: 1,
 			perPage: 10,
-			...input,
+			...input.at(0),
 		},
 		getNextPageParam: (lastPage, allPages, lastPageParam) => {
 			if (!lastPage.next) {
@@ -35,6 +37,3 @@ export const getPostsInfiniteQueryOptions = (input?: GetPostsInput) =>
 			};
 		},
 	});
-
-export const useGetPostsInfiniteQuery = (input?: GetPostsInput) =>
-	useInfiniteQuery(getPostsInfiniteQueryOptions(input));
