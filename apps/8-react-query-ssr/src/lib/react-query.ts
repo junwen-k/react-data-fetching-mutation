@@ -4,16 +4,23 @@ import {
 	useMutation,
 } from "@tanstack/react-query";
 
+export function mutationOptions<
+	TData = unknown,
+	TError = DefaultError,
+	TVariables = void,
+	TContext = unknown,
+>(
+	options: UseMutationOptions<TData, TError, TVariables, TContext>,
+): UseMutationOptions<TData, TError, TVariables, TContext> {
+	return options;
+}
+
 export interface UseActionMutationOptions<
 	TData = unknown,
 	TError = DefaultError,
 	TVariables = void,
 	TContext = unknown,
-> extends Omit<
-		UseMutationOptions<TData, TError, TVariables, TContext>,
-		"mutationFn"
-	> {
-	action: UseMutationOptions<TData, TError, TVariables, TContext>["mutationFn"];
+> extends UseMutationOptions<TData, TError, TVariables, TContext> {
 	transformError?: (
 		...props: Parameters<
 			NonNullable<
@@ -29,13 +36,11 @@ export const useActionMutation = <
 	TVariables = void,
 	TContext = unknown,
 >({
-	action,
 	transformError,
 	onSuccess,
 	...options
 }: UseActionMutationOptions<TData, TError, TVariables, TContext>) =>
 	useMutation({
-		mutationFn: action,
 		onSuccess: (...props) => {
 			const error = transformError?.(...props);
 			if (error) {

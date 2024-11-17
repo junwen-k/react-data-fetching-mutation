@@ -3,11 +3,12 @@
 import * as React from "react";
 
 import {
+	getPostsQueryOptions,
 	useCreatePostMutation,
 	useDeletePostMutation,
-	useGetPostsSuspenseQuery,
-} from "@/queries/posts";
+} from "@/queries/posts.client";
 import type { Post } from "@/types/post";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import {
 	type CellContext,
 	type PaginationState,
@@ -53,10 +54,12 @@ export const Posts = () => {
 	const page = Number(searchParams.get("page") ?? "1");
 	const perPage = Number(searchParams.get("perPage") ?? "5");
 
-	const { data } = useGetPostsSuspenseQuery({
-		page,
-		perPage,
-	});
+	const { data } = useSuspenseQuery(
+		getPostsQueryOptions({
+			page,
+			perPage,
+		}),
+	);
 
 	const { mutate: createPost, isPending, error } = useCreatePostMutation();
 

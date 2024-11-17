@@ -1,7 +1,7 @@
 // Server actions with "use server";
 "use server";
 
-import * as posts from "@/apis/posts";
+import * as posts from "@/apis/posts.server";
 
 export const createPost = async (title: string) => {
 	if (!title) {
