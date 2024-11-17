@@ -1,5 +1,5 @@
 import { Posts } from "@/components/posts";
-import { prefetchGetPostsQuery } from "@/queries/posts";
+import { getPostsQueryOptions } from "@/queries/posts.server";
 import {
 	HydrationBoundary,
 	QueryClient,
@@ -16,10 +16,12 @@ export default async function Home({
 
 	const queryClient = new QueryClient();
 
-	await prefetchGetPostsQuery(queryClient, {
-		page: Number(page),
-		perPage: Number(perPage),
-	});
+	await queryClient.prefetchQuery(
+		getPostsQueryOptions({
+			page: Number(page),
+			perPage: Number(perPage),
+		}),
+	);
 
 	return (
 		<HydrationBoundary state={dehydrate(queryClient)}>
