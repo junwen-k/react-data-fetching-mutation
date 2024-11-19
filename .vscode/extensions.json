@@ -3,6 +3,7 @@
 		"biomejs.biome",
 		"dotenv.dotenv-vscode",
 		"tamasfe.even-better-toml",
+		"tomoki1207.pdf",
 		"Vercel.turbo-vsc"
 	]
 }
